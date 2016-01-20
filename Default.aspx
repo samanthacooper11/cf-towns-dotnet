@@ -27,7 +27,7 @@
         <asp:Label ID="Label1" runat="server" Text="Label" CssClass="newStyle2"></asp:Label>
     
         <br />
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" CssClass="newStyle3" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" OnPageIndexChanging="GridView1_PageIndexChanging" CellPadding="4" CssClass="newStyle3" ForeColor="#333333" GridLines="None" AllowPaging="True" PageSize="15">
             <AlternatingRowStyle BackColor="White" />
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

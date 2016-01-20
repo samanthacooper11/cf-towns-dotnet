@@ -20,6 +20,7 @@ public partial class _Default : System.Web.UI.Page
         {
             initiateDB();
             bindData();
+            Label1.Text = "";
             
         } else
         {
@@ -72,7 +73,6 @@ public partial class _Default : System.Web.UI.Page
         }
         catch (MySqlException ex)
         {
-            Label1.Text = ex.Message.ToString();
         }
     
     }
@@ -102,5 +102,11 @@ public partial class _Default : System.Web.UI.Page
         {
 
         }
+    }
+
+    protected void GridView1_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        bindData();
     }
 }
