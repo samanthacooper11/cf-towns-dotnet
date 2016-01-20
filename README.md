@@ -3,7 +3,7 @@
 This is a basic sample dotnet app that binds to a MySQL service running in Cloud Foundry, Inserts UK Town data and then displays results
 
 #Getting Started
-Once your PCF instance has a Windows Cell available: See [here](http://docs.pivotal.io/pivotalcf/opsguide/deploying-diego.html) for more information you can simply clone this repo and then push the app as follows:
+Once your PCF instance has a Windows Cell available (see [here](http://docs.pivotal.io/pivotalcf/opsguide/deploying-diego.html) for more information) you can simply clone this repo and then push the app as follows:
 ```
 cf push uktowns -s windows2012R2 -b binary_buildpack --no-start
 ```
