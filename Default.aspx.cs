@@ -21,6 +21,7 @@ public partial class _Default : System.Web.UI.Page
             initiateDB();
             bindData();
             Label1.Text = "";
+            closeConnection();
             
         } else
         {
@@ -60,27 +61,27 @@ public partial class _Default : System.Web.UI.Page
         {
             mysql_connection = new MySqlConnection(connectionString);
             mysql_connection.Open();
-
+            //use the database created and then execute sql scripts to create table and populate with some sample data
             string sqlStatement = "USE " + mysqldbname + ";";
             MySqlCommand cmd = new MySqlCommand(sqlStatement, mysql_connection);
             cmd.ExecuteNonQuery();
-            MySqlScript script1 = new MySqlScript(mysql_connection, File.ReadAllText("create-schema.sql"));
+            MySqlScript script1 = new MySqlScript(mysql_connection, File.ReadAllText("sql-scripts/create-schema.sql"));
             script1.Delimiter = "$$";
             script1.Execute();
-            MySqlScript script2 = new MySqlScript(mysql_connection, File.ReadAllText("insert-towns.sql"));
+            MySqlScript script2 = new MySqlScript(mysql_connection, File.ReadAllText("sql-scripts/insert-towns.sql"));
             script2.Delimiter = "$$";
             script2.Execute();
         }
         catch (MySqlException ex)
         {
         }
-    
     }
 
     private void bindData()
     {
         using (mysql_connection)
         {
+            //select all results and bind to GridView
             MySqlDataAdapter adaptor = new MySqlDataAdapter("SELECT * from " + mysqldbname + ".uktowns", mysql_connection);
             DataTable dt = new DataTable();
             adaptor.Fill(dt);
