@@ -14,7 +14,7 @@ cf start uktowns
 ```
 Note: this will require the enable-diego CLI plug [available here](https://github.com/cloudfoundry-incubator/diego-enabler)
 
-You can then go to the app URL and you will see a message highlighting that you need to bind a MySQL Service, so go ahead and create and bind the service 
+You can then go to the app URL and you will see a message highlighting that you need to bind a MySQL Service, so go ahead and create and bind the service as follows
 ```
 cf create-service service-name plan-name mysqlServiceName
 cf bind-service uktowns mysqlServiceName
