@@ -21,7 +21,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <h1><span class="newStyle1">UK Cities</span></h1>
+        <h1><span class="newStyle1">UK Towns</span></h1>
         <br />
     
         <asp:Label ID="Label1" runat="server" Text="Label" CssClass="newStyle2"></asp:Label>
