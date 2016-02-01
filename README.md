@@ -1,6 +1,6 @@
 # cf-towns-dotnet
 #Introduction
-This is a basic sample dotnet app that binds to a MySQL service running in Cloud Foundry, Inserts UK Town data and then displays results
+This is a basic sample c# ASP.NET app demonstrating the functionaliy of retrieving the Cloud Foundry environment variable. If there is no MySQL service bound it will display a note stating this, If a MySQL service has been bound to the app it will populate the database with UK Town data and then display the results in a simple table.
 
 #Getting Started
 Once your PCF instance has a Windows Cell available (see [here](http://docs.pivotal.io/pivotalcf/opsguide/deploying-diego.html) for more information) you can simply clone this repo and then push the app as follows:
